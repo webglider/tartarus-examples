@@ -17,11 +17,9 @@ dfs_handler(guid, (IP, Port), execute) :-
         %% Execute actions to be done on a new node
         dfs_handler(guid, (IP,Port), new_node)
     ),
-    writeln('check visited'),
     %% Find the next node
     %% `checklist` is used to keep track of nodes which have already been checked
     assert(checklist(guid, none)),
-    writeln('asserted checklist'),
     dfs_handler(guid, (IP,Port), find_next).
 
 %% Actions to be done when new node is reached
@@ -37,7 +35,7 @@ dfs_handler(guid, (IP,Port), find_next) :-
     %% pick a neighbour not on the checklist
     (neighbour(Node),not(checklist(guid, Node)) ->
         %% send message to stationary agent on node requesting for status
-        writeln('sending message...'), writeln(Node), writeln(IP), writeln(Port),
+        writeln('sending message...'), writeln(Node),
         agent_post(platform, Node, [node_handler, stationary, (IP,Port), get_status(guid)])
     ;
         %% Dead-end has been reached

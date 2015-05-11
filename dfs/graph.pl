@@ -81,7 +81,7 @@ consult('stationary.pl'),
 
 
 %% Predicate to move the agent to it's next destination
-move :-
+go :-
     get_platform_details(X,Y),
     dfs_handler(explorer, (X, Y), execute).
 

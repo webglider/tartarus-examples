@@ -18,9 +18,9 @@ First we need to initialize the graph on the network.
 
 6. Run `start.` This will start the dfs process.
 
-7. Run `move.` This will move the agent to it's next destination.
+7. Run `go.` This will execute the agent on this node and it will then move to it's next destination.
 
-8. You can use `move.` on each of the platforms as the agent moves to control the process interactively.
+8. You can use `go.` on each of the platforms as the agent moves to control the process interactively.
 
 9. When the process finishes, the agent will be back at the starting point and a `dfs finished` message will be printed
 
