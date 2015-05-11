@@ -64,7 +64,7 @@ spawn_agent_handler(guid, (IP , Port),spawn_to_platforms(P,[H|T])):-
 
 spawn_agent_handler(guid,(IP,Port),spawn(P_from,P_to)):-
 	atom_concat(P_from,to,Temp),
-	atom_concat(Temp,P_to,New_agent_name),
+	atom_concat(Temp,P_to,New_agent_name),							%% generating new name.
 	writeln('spawned the agent ' : New_agent_name),
 	platform(P_from,IP1,Port1),
 	agent_create(New_agent_name,(IP1,Port1),spawn_agent_handler),	%% Creating new agent for sending to P_to.
