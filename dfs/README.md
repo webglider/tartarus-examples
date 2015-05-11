@@ -4,6 +4,8 @@ This example demonstrates the implementation of a depth first search (DFS) algor
 ### Usage
 First we need to initialize the graph on the network.
 
+0. Copy the Tartarus platform file into the directory of this example as `platform.pl` 
+
 1. Open the SWI-Prolog interpreter or console in the directory of this example and run `consult('graph.pl').` (On windows systems this can be done directly by double clicking on the graph.pl icon in explorer window)
 
 2. Run `init(1).` This will initialize the first node of the graph on this instance of prolog interpreter.
