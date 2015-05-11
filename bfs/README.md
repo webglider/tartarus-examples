@@ -1,9 +1,13 @@
-Aim:
+###Aim:
 Demonstrate mobile agents performing a BFS on a graph.
 
-AUTOMATIC INITIALIZATION:
+###AUTOMATIC INITIALIZATION:
 1.Start five intances of SWI-Prolog and consult `init_bfs.pl`.
-								consult('init.pl').
+
+```
+consult('init.pl').
+```
+
 2.Execute init1 predicate on the platform where you want to start the BFS.
 								init1.
 
