@@ -56,9 +56,9 @@ spawn_agent_handler(guid, (IP , Port), spawn_to_platforms(P,[])).
 spawn_agent_handler(guid, (IP , Port),spawn_to_platforms(P,[H|T])):-
 	write('spawn from ': P),
 	writeln(' to ': H),
-	spawn_agent_handler(guid,(IP,Port),spawn(P,H)),												%% Extracting head of the list.
-																	%% recursively reading the remaining elements of the list.
-	spawn_agent_handler(guid,(IP,Port),spawn_to_platforms(P,T)).		
+	spawn_agent_handler(guid,(IP,Port),spawn(P,H)),					%% Extracting head of the list.
+	spawn_agent_handler(guid,(IP,Port),spawn_to_platforms(P,T)).	%% recursively reading the remaining elements of the list.	
+																	
 
 %% Creates a new agent to send to a neighboring node 'P_to' from the present node 'P_from'.
 
@@ -68,13 +68,11 @@ spawn_agent_handler(guid,(IP,Port),spawn(P_from,P_to)):-
 	writeln('spawned the agent ' : New_agent_name),
 	platform(P_from,IP1,Port1),
 	agent_create(New_agent_name,(IP1,Port1),spawn_agent_handler),	%% Creating new agent for sending to P_to.
-
 	layer_number(guid,N),
 	X is N+1 ,
-	writeln('layer number is ' : X),
+	writeln('layer number is ' : X),								
 	assert(layer_number(New_agent_name,X)),
-	add_payload(New_agent_name,[(layer_number,2)]),
-
+	add_payload(New_agent_name,[(layer_number,2)]),					%% adding payload containing the layer number of the node.
 
 	add_token(New_agent_name , [9595]),								%% Adding token before moving to new platform.
 	platform(P_to,IP2,Port2),								
