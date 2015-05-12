@@ -46,15 +46,14 @@ Demonstrate mobile agents performing a BFS on a graph.
 5. Now we have to choose a platform from which we wish to start the BFS and do the following:
 
   i. create an agent with some name say 'agent1' with handler 'spawn_agent_handler'.
-							
-      ```
-      agent_create(agent1,(<hostIP>,<port>),spawn_agent_handler).
-      ```
+     ```
+     agent_create(agent1,(<hostIP>,<port>),spawn_agent_handler).
+     ```
   ii. Add the token we have previously chosen for authentication (9595) to the agent.
 							
-	```
-	add_token(agent1,[9595]).
-	```
+      ```
+      add_token(agent1,[9595]).
+      ```
 							
 
   iii. Add a payload to the agent containing the number of the layer of the node the agent is going to
