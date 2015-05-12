@@ -44,6 +44,7 @@ Demonstrate mobile agents performing a BFS on a graph.
    ```
 
 5. Now we have to choose a platform from which we wish to start the BFS and do the following:
+
   i. create an agent with some name say 'agent1' with handler 'spawn_agent_handler'.
 							
       ```
