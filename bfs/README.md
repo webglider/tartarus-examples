@@ -51,11 +51,11 @@ Demonstrate mobile agents performing a BFS on a graph.
      agent_create(agent1,(<hostIP>,<port>),spawn_agent_handler).
      ```
   ii. Add the token we have previously chosen for authentication (9595) to the agent.
-							
+      
       ```
       add_token(agent1,[9595]).
       ```
-							
+      
 
   iii. Add a payload to the agent containing the number of the layer of the node the agent is going to
        explore.Since this is the first node its layer is 0. (Note: Payload is a tool that enables us to attribute         predicates to a mobile agent ie when a predicate is added as a payload to the agent it is added to the code        the mobile agent thus travelling with it where ever it goes.)
@@ -64,11 +64,13 @@ Demonstrate mobile agents performing a BFS on a graph.
        assert(layer_number(guid,0)).
        add_payload(agent1,[(layer_number,2)]).
        ```
+   
    iv. Now execute the agent on the platform.
        
        ```
        agent_execute(agent1,(<hostIP>,<port>),spawn_agent_handler).
        ```
+
 6. This now spawns agents through out the graph in similar fashion to breadth first search.
 
 
