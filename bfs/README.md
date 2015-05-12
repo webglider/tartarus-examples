@@ -53,9 +53,9 @@ Demonstrate mobile agents performing a BFS on a graph.
      
   ii. Add the token we have previously chosen for authentication (9595) to the agent.
   
-      ```
-      add_token(agent1,[9595]).
-      ```
+     ```
+     add_token(agent1,[9595]).
+     ```
   
   iii. Add a payload to the agent containing the number of the layer of the node the agent is going to
        explore.Since this is the first node its layer is 0. (Note: Payload is a tool that enables us to attribute         predicates to a mobile agent ie when a predicate is added as a payload to the agent it is added to the code        the mobile agent thus travelling with it where ever it goes.)
