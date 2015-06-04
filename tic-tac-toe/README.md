@@ -28,7 +28,7 @@ ________
 
 4. Set the oppenent player as player 1 using `assert(play_with(host1, port1)).` where host1 and port1 are respectively the host and port of player 1.
 
-Instrcution for playing
+Instructions for playing
 _______________________
 
 * The game can be started by player 1 using `start.`
