@@ -1,9 +1,0 @@
-
-1433413267.8528965 midhul localhost 3434 hello
-1433413339.099996 midhul localhost 3435 hello again
-1433419995.0175772 salesman localhost 7001 Reached paris
-1433419995.0218494 salesman localhost 7004 Reached lyon
-1433419995.0485084 salesman localhost 7003 Reached grenoble
-1433419995.063734 salesman localhost 7005 Reached marseille
-1433419995.0870438 salesman localhost 7002 Reached nice
-1433419995.099555 salesman localhost 7002 Journey complete
