@@ -15,14 +15,21 @@ init :-
     location(IP ,Port), platform_start(IP, Port),
     set_token(9595),
     %% Create agent
-    agent_create(search, (IP, Port), search_handler),
-    add_token(search, [9595]),
-    add_payload(search, [(list, 2)]).
+    consult('agent.pl').
 
 %% Use this predicate to start the search.
 search :- 
-    writlen('Enter a word to search:'),
+    %% Spawn agent
+    agent_create(search, (IP, Port), search_handler),
+    add_token(search, [9595]),
+    assert(home(guid, (IP, Port))),
+    add_payload(search, [(list, 2), (home, 2)]),
+
+    writeln('Enter a word to search:'),
     read(Word),
+    %% reatract old data
+    (retract(target(guid, _)) -> true ; true),
+    (retract(meaning(guid, _)) -> true ; true),
     assert(target(guid, Word)), add_payload(search, [(target, 2)]),
     assert(meaning(guid, null)), add_payload(search, [(meaning, 2)]),
     %% execute agent

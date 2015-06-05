@@ -11,7 +11,7 @@ word(ingenious, 'cleverly and originally devised and well suited to its purpose'
 word(hypothetical, 'based on or serving as a hypothesis').
 word(gigantic, 'of very great size or extent; huge or enormous').
 word(superfluous, 'unnecessary, especially through being more than enough').
-word(retarded, 'less advanced in mental, physical, or social development than is usual for one's age').
+word(retarded, 'less advanced in mental, physical, or social development than is usual for ones age').
 
 
 %% Use this predicate to initilize the platform.
