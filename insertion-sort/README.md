@@ -32,7 +32,7 @@ _______________
 
 * The example can easily be extended to more platforms and agents. All you have to do is copy the `platform-1.pl` file and change the required values. Inline comments in the file will help you with this. After this you can simply consult this on a new platfrom and run `init.` and  `insert.` just as usual.
 
-* Insertion must be done in sequential order (the order in which the linked list is arranges left to right).
+* Insertion must be done in sequential order (the order in which the linked list is arranged left to right).
 
 
 
