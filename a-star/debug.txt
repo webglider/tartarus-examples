@@ -1,0 +1,33 @@
+true.
+
+ERROR: Stream user_input:1:435 Syntax error: Unexpected end of clause
+ERROR: Stream user_input:1:437 Syntax error: Unexpected end of clause
+true.
+
+Correct to: "hihihi"? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+ERROR: '$execute_goal2'/2: Undefined procedure: hihih/0
+ERROR:   However, there are definitions for:
+ERROR:         hihihi/0
+   Exception: (6) hihih ? No previous search
+   Exception: (6) hihih ? creep
+ERROR: Stream user_input:1:459 Syntax error: Unexpected end of clause
+Correct to: "hihihi"? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+Please answer 'y' or 'n'? 
+ERROR: '$execute_goal2'/2: Undefined procedure: hihih/0
+ERROR:   However, there are definitions for:
+ERROR:         hihihi/0
+   Exception: (6) hihih ? creep
+ERROR: Stream user_input:1:474 Syntax error: Unexpected end of clause
+ERROR: Stream user_input:1:476 Syntax error: Unexpected end of clause
+ERROR: Stream user_input:1:478 Syntax error: Unexpected end of clause
