@@ -22,7 +22,7 @@ ________
 
 1. Consult the Tartarus platform file `platform.pl` from appropriate location using either `consult('path to platform.pl').` or the Windows GUI
 
-2. Start a platform using `platform_start(host2, port2).`, replace host1 and port1 with required values. (host is simply localhost if running locally)
+2. Start a platform using `platform_start(host2, port2).`, replace host2 and port2 with required values. (host is simply localhost if running locally)
 
 3. Set token to 9595 using `set_token(9595).` (Note: the value 9595 is hardcoded in the `play.pl` file and it can be modified if required)
 
