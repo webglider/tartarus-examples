@@ -28,26 +28,22 @@ neighbors(P,L):-
 
 
 
-%% Handler for each new agent created
+%% Handler for each new agent created. 
+%% Executed on transfer to its destination.
 
 spawn_agent_handler(guid,(IP,Port),main):-
-	current_predicate(visited/1) ->								%% Checking if visited predicate exists on the platform.
-			(visited(_) -> agent_kill(guid) ; 					%% If visited by some agent, commit suicide
-					assert(visited(guid)),						%% If NOT asssert the platform as visited,
-					
-					platform(P_id , IP , Port),					%% and spawn new agents to the neighbors of the platform.
-					neighbors(P_id,L),
-					write('ready to spawn from ': P_id),
-					writeln(' to platforms ': L),
-					spawn_agent_handler(guid, (IP,Port) , spawn_to_platforms(P_id,L))
-				)
-		; 	(assert(visited(guid)),								%% If not visited predicate doesn't exist,
-			platform(P_id , IP , Port),							%% asssert the platform as visited,
-			neighbors(P_id,L),									%% and spawn new agents to the neighbors of the platform.
-			write('ready to spawn from ': P_id),
-			writeln(' to platforms ': L),
-			spawn_agent_handler(guid,(IP,Port),spawn_to_platforms(P_id,L))
-			).
+	current_predicate(visited/1),						%% If visited predicate exists on the platform.
+	agent_kill(guid).
+
+spawn_agent_handler(guid,(IP,Port),main):-
+	read(_Go_signal),
+	\+current_predicate(visited/1),						%% If visited predicate doesn't exists on the platform.
+	assert(visited(guid)),								%% If not visited predicate doesn't exist,
+	platform(P_id , IP , Port),							%% asssert the platform as visited,
+	neighbors(P_id,L),									%% and spawn new agents to the neighbors of the platform.
+	write('ready to spawn from ': P_id),
+	writeln(' to platforms ': L),
+	spawn_agent_handler(guid,(IP,Port),spawn_to_platforms(P_id,L)).
 
 
 %% This predicate recursively goes through the platforms neighboring to P and calls spawn() on each elements.
