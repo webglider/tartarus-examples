@@ -36,7 +36,7 @@ spawn_agent_handler(guid,(IP,Port),main):-
 	agent_kill(guid).
 
 spawn_agent_handler(guid,(IP,Port),main):-
-	read(_Go_signal),
+	sleep(2),
 	\+current_predicate(visited/1),						%% If visited predicate doesn't exists on the platform.
 	assert(visited(guid)),								%% If not visited predicate doesn't exist,
 	platform(P_id , IP , Port),							%% asssert the platform as visited,
