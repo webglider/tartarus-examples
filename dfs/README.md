@@ -40,3 +40,6 @@ When on a particular node the mobile agent works as follows:
 
 ### Graph
 The graph is contructed using predicates in the `graph.pl` file. To build a custom graph, this file can be modified. Details can be found in the inline comments of this file.
+
+A picture of the example graph described in `graph.pl` :
+![example graph](https://github.com/webglider/tartarus-examples/blob/master/dfs/graph.png?raw=true "Example graph used in graph.pl")
