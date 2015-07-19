@@ -3,6 +3,13 @@ This example demonstrates the implementation of a depth first search (DFS) algor
 
 ![example graph](https://github.com/webglider/tartarus-examples/blob/master/dfs/graph.png?raw=true "Example graph used in graph.pl")
 
+| Filename      | Purpose                     |
+| --------      | --------------------------- |
+| explorer.pl   | Agent performing DFS        |
+| stationary.pl | Static agent on each node   |
+| graph.pl      | Graph layout/description    |
+| start.pl      | To start DFS process        |
+
 ### Usage
 First we need to initialize the graph on the network.
 
