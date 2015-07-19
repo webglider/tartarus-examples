@@ -16,4 +16,5 @@ init :-
     
 start :- 
     %% agent is now executed
+    get_platform_details(X,Y),
     agent_execute(explorer, (X,Y), dfs_handler).
