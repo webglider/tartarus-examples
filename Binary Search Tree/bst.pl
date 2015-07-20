@@ -60,28 +60,29 @@ value_at(P_id,X):-
 
 bst_handler(guid,(IP,Port),main):-
 	writeln('bst agent executing on port ' : Port),
-	sleep(1),
-	platform(P_id,IP,Port),
-	value_at(P_id,Xp),
-	search_value(guid,X),
+	sleep(1),						%% Delay for one second
+	platform(P_id,IP,Port),					%% Extract platform IP and Port from P_id
+	value_at(P_id,Xp),					%% Extract value Xp at P_id
+	search_value(guid,X),					%% Extract search_value X from the payload
 	write('search value ': X),writeln('value at ' : Xp),
-	Xp = X,
+	Xp = X,							%% Only true if the value at the platform and search value are equal
 	writeln('equal'),
 	writeln('done').
 
 
 bst_handler(guid,(IP,Port),main):-
 	writeln('bst agent executing on port ' : Port),
-	sleep(3),
-	platform(P_id,IP,Port),
-	value_at(P_id,Xp),
-	search_value(guid,X),
+	sleep(3),						%% Delay for one second
+	platform(P_id,IP,Port),					%% Extract platform IP and Port from P_id
+	value_at(P_id,Xp),					%% Extract value Xp at P_id
+	search_value(guid,X),					%% Extract search_value X from the payload
 	write('search value ': X),writeln('value at ' : Xp),
-	\+(Xp = X),
+	\+(Xp = X),						%% True when search value and value on the platform are not equal
 	writeln('not equal'),
-	children(P_id,L,R),
+	children(P_id,L,R),					%% Extract Left child L and Right child R of P_id
+	%% If value of platform is greater than search value,get NewIP and NewPort of left child else get from right child 
 	(Xp > X -> platform(L,NewIP,NewPort)  ;  platform(R,NewIP,NewPort) ),
 	writeln('moving to port ': NewPort),
-	agent_move(guid,(NewIP,NewPort)),
+	agent_move(guid,(NewIP,NewPort)),			%% Move agent to the NewIP and NewPort
 	writeln('done').
 
