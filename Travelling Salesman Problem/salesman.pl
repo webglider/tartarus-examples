@@ -10,23 +10,24 @@ salesman_handler(guid, (_IP, _Port), main) :-
 
     %% Find the nearest unvisited neighbour
     findall(Price, (checklist(guid, City), price(City, Price)), L),
-    (min_list(L, Min) -> 
-        %% If such a city exists
-        price(Destination, Min),
-
-        %% Remove from checklist
-        retract(checklist(guid, Name)),
-
-        %% Move to Destination
-        location(Destination, Location),
-        agent_move(guid, Location)
-    ;
-        %% If no such city exists
-        %% The journey is complete
-        writeln('Journey complete'),
-        send_log(guid, 'Journey complete')   
-    ).
-
+    min_list(L, Min),
+    %% If such a city exists
+    price(Destination, Min),
+    %% Remove from checklist
+    retract(checklist(guid, Name)),
+    %% Move to Destination
+    location(Destination, Location),
+    agent_move(guid, Location).
+    
+salesman_handler(guid, (_IP, _Port), main) :-
+    name(Name), atom_concat('Reached ', Name, Msg),
+    send_log(guid, Msg),
+    findall(Price, (checklist(guid, City), price(City, Price)), L),
+    \+min_list(L, Min),
+    %% If no such city exists
+    %% The journey is complete
+    writeln('Journey complete'),
+    send_log(guid, 'Journey complete').
 
 %% Checklist for salesman
 checklist(guid, paris).
