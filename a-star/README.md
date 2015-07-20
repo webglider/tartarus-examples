@@ -4,11 +4,11 @@ Imagine a network of roads in a busy city arranged in a square grid-like fashion
 ### Algorithm
 Three types of mobile agents are used in this example.
 
-* Path Exploring Agent (PEA)
+* Explorer Agent (explorer.pl)
 
-* Updater Agent (UA)
+* Updater Agent (updater.pl)
 
-* Path Tracing Agent (PTA)
+* Tracer Agent (tracer.pl)
 
 The most complex of all is the PEA, which essentially traverses the network graph using the A* algorithm. When at a particular node, if the status or information at a neighbouring node needs to be updated, it spawns lightweight UAs to achieve the task. UAs kill themselves immediately after the data has been added to the target node. Once the PEA reaches the goal, it spawns executes a PTA, which simply re-traces the path back to the source, and reports the result at the source
 
@@ -41,6 +41,7 @@ _____________________
 1. Open the source platform (7001 if 7000 was base port) and run `start.` The entire process will execute and the shortest path will be printed as a list of directions to follow (north, south, east, west)
 
 
+***Note:*** In the example grid base port platform is at north-west top and last platform is at south-east bottom
 
 
 ### Additonal Notes
