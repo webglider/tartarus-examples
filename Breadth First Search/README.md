@@ -1,6 +1,12 @@
 ###Aim:
 Demonstrate mobile agents performing a BFS on a graph.
 
+The graph is defined by the predicate `neighbor(P_id,[List of neighbors])`
+
+![BFS image]
+(graph.png)
+
+
 ###AUTOMATIC INITIALIZATION:
 0. Copy tartarus platform file as `platform.pl` into the directory of this example.
 
