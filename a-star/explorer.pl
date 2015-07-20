@@ -36,7 +36,7 @@ pea_handler(guid, (_IP,_Port), handle_neighbours([])).
 pea_handler(guid, (IP, Port), handle_neighbours([(N,Dir)|T])) :- closed(guid, N),
     pea_handler(guid, (IP, Port), handle_neighbours(T)).
     
-% 
+% If top of list is not in closed set, then process it
 pea_handler(guid, (IP, Port), handle_neighbours([(N,Dir)|T])) :- not(closed(guid, N)),
      %% find new priority value
     dist(G),heuristic(H),
