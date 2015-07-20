@@ -26,6 +26,8 @@ _______________
 
 3. After you have run `insert.` on all platforms in order, the integers and their agents will be in sorted order (increasing left to right).
 
+*** Initial order used in example *** : 101 <-> 74 <-> 87 <-> 43 <-> 58
+
 
 
 ### Additonal Notes
