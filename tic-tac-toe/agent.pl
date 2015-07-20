@@ -2,6 +2,12 @@
 
 %% Handler for the refree mobile agent.
 
+%% The agent carries the `board` predicate as payload
+%% board(guid, Row, Col, Symbol)
+%% Row -> row in grid (a or b or c)
+%% Col -> column in grid (1 or 2 or 3)
+%% Symbol -> symbol presently in position (Row,Col)
+%% Symbol can be `x` or `o` or `_`
 
 %% Prints a single row of the board on a line
 refree_handler(guid, _, print_row(R)) :-
@@ -19,12 +25,23 @@ refree_handler(guid, _, print_board) :-
     refree_handler(guid, nothing, print_row(c)),
     writeln('----------').
 
+%% Predicate to find symbol of present player
+%% refree_handler(guid, _, symbols(This, Other))
+%% `This` is unfied with symbol of player on present platform
+%% `Other` is unified with symbol of player on other platform
+refree_handler(guid, _, symbols(x,o)) :- current_predicate(home/0).
+refree_handler(guid, _, symbols(o,x)) :- not(current_predicate(home/0)).
+
+
+%% Main Handler
+%% This is executed as soon as the agent reaches a platform
 refree_handler(guid, (IP, Port), main) :- 
     %% Print present board state
     refree_handler(guid, (IP, Port), print_board),
-    (current_predicate(home/0) -> Sym=x,Osym=o; Sym=o,Osym=x),
+    refree_handler(guid, nothing, symbols(Sym, Osym)),
 
     %% Has somebody won?
+    %% fail ensures that execution does not continue if the game has terminated
     (refree_handler(guid, (IP, Port), has_won(Sym)) ->
         writeln('YOU HAVE WON THE GAME'),!,fail   
     ;true),
@@ -32,41 +49,44 @@ refree_handler(guid, (IP, Port), main) :-
         writeln('YOU HAVE LOST THE GAME'),!,fail   
     ;true),
 
+    %% Take input from player
+    refree_handler(guid, (IP,Port), take_input).
 
+
+%% This predicate takes input of the move the player wants to make
+refree_handler(guid, (IP,Port), take_input) :- 
     writeln('Its your turn now!'),
-    writeln('To make a move use mark(X,Y), example: mark(a,2).'),
-    %% assert the mark predicate
-    assert((mark(X,Y) :- refree_handler(guid, (IP, Port), make_move(X,Y)))).
+    writeln('Enter row [a or b or c]: '), read(Row),
+    writeln('Enter column [1 or 2 or 3]: '), read(Col),
+    %% try to make move
+    refree_handler(guid, (IP, Port), make_move(Row,Col)).
 
-refree_handler(guid, (IP, Port), make_move(X,Y)) :- 
-    (current_predicate(home/0) -> Sym=x,Osym=o; Sym=o,Osym=x),
-    %% Check if move is valid.
-    (board(guid, X, Y, '_') ->
-        
-        %% Valid move
-        write('Refree: You made a move at location '), 
-        write(X),write(','),write(Y),nl,
-        retract(board(guid, X,Y, '_')),
-        assert(board(guid,X,Y,Sym)),
-        refree_handler(guid, (IP, Port), print_board),
+%% This predicate tries to make the move which the user has input
+%% If the move is not valid as for input again
+refree_handler(guid, (IP, Port), make_move(X,Y)) :- not(board(guid, X, Y, '_')),
+        writeln('Refree: Invalid move!'),
+        refree_handler(guid, (IP,Port), take_input).
 
-        %% Has somebody won?
-        (refree_handler(guid, (IP, Port), has_won(Sym)) ->
-            writeln('YOU HAVE WON THE GAME')   
-        ;true),
-        (refree_handler(guid, (IP, Port), has_won(Osym)) ->
-            writeln('YOU HAVE LOST THE GAME')   
-        ;true),
+%% If the move is valid
+refree_handler(guid, (IP, Port), make_move(X,Y)) :- board(guid, X, Y, '_'),
+    refree_handler(guid, (IP, Port), symbols(Sym, Osym)),
+    write('Refree: You made a move at location '), 
+    write(X),write(','),write(Y),nl,
+    retract(board(guid, X,Y, '_')),
+    assert(board(guid,X,Y,Sym)),
+    refree_handler(guid, (IP, Port), print_board),
 
-        %% Move the agent.
-        play_with(Destination_IP, Destination_Port),
-        retractall(mark(_,_)),
-        agent_move(guid, (Destination_IP, Destination_Port))
+    %% Has somebody won?
+    (refree_handler(guid, (IP, Port), has_won(Sym)) ->
+        writeln('YOU HAVE WON THE GAME')   
+    ;true),
+    (refree_handler(guid, (IP, Port), has_won(Osym)) ->
+        writeln('YOU HAVE LOST THE GAME')   
+    ;true),
 
-    ;
-        %% Invalid move
-        writeln('Refree: Invalid move!')
-    ).
+    %% Move the agent.
+    play_with(Destination_IP, Destination_Port),
+    agent_move(guid, (Destination_IP, Destination_Port)).
 
 %% Tic tac toe logic
 refree_handler(guid, _, has_won(S)) :- 
