@@ -60,18 +60,28 @@ value_at(P_id,X):-
 
 bst_handler(guid,(IP,Port),main):-
 	writeln('bst agent executing on port ' : Port),
+	sleep(1),
 	platform(P_id,IP,Port),
 	value_at(P_id,Xp),
 	search_value(guid,X),
 	write('search value ': X),writeln('value at ' : Xp),
-	(Xp = X -> writeln('equal') 
-		;	writeln('not equal'),
-			children(P_id,L,R),
-			(Xp > X -> platform(L,NewIP,NewPort)
-				;  platform(R,NewIP,NewPort)),
-			writeln('moving to port ': NewPort),
-			agent_move(guid,(NewIP,NewPort))
-	),
+	Xp = X,
+	writeln('equal'),
 	writeln('done').
 
+
+bst_handler(guid,(IP,Port),main):-
+	writeln('bst agent executing on port ' : Port),
+	sleep(3),
+	platform(P_id,IP,Port),
+	value_at(P_id,Xp),
+	search_value(guid,X),
+	write('search value ': X),writeln('value at ' : Xp),
+	\+(Xp = X),
+	writeln('not equal'),
+	children(P_id,L,R),
+	(Xp > X -> platform(L,NewIP,NewPort)  ;  platform(R,NewIP,NewPort) ),
+	writeln('moving to port ': NewPort),
+	agent_move(guid,(NewIP,NewPort)),
+	writeln('done').
 
