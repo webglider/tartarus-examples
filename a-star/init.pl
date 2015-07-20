@@ -6,10 +6,10 @@ getxy(N, Cols, X, Y) :- X is ceiling(N/Cols), Rem is mod(N,Cols), Rem=0, Y is Co
 init(N) :- 
     consult('conf.pl'),
     path_to_tartarus(Path), consult(Path),
-    base_port(Base), Port is Base + N,
+    base_port(Basep), Base is Basep - 1, Port is Base + N,
     platform_start(localhost, Port),
     set_token(9595),
-    consult('ua.pl'),
+    consult('updater.pl'),
     %% Get X,Y coords
     grid_size(Rows, Cols),
     getxy(N, Cols, X, Y),
@@ -31,7 +31,7 @@ init(N) :-
 
     %% If starting point initilize agent
     (N=1 -> 
-    consult('pea.pl'),
+    consult('explorer.pl'),
     agent_create(pea, (localhost, Port), pea_handler),
     add_token(pea, [9595]),
     %% Add payloads
@@ -48,7 +48,7 @@ init(N) :-
     %% If goal
     Ngoal is Rows*Cols,
     (N=Ngoal -> assert(is_goal),
-                consult('pta.pl'),
+                consult('tracer.pl'),
                 agent_create(pta, (localhost, Port), pta_handler),
                 add_token(pta, [9595]),
                 add_payload(pta, [(reverse_dir,3), (path,2)]) 

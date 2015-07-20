@@ -3,9 +3,10 @@
 :- dynamic reverse_dir/3.
 :- dynamic path/2.
 
-pta_handler(guid, (_IP, _Port), main) :- 
-    %% If not yet at home
-    (current_predicate(came_from/1) ->
+%% If not yet at home
+%% `came_predicate` is defined
+pta_handler(guid, (_IP, _Port), main) :- current_predicate(came_from/1),
+    
         came_from(Next),
         neighbour(Next, Dir),
         %%Reverse the direction
@@ -14,16 +15,16 @@ pta_handler(guid, (_IP, _Port), main) :-
         retract(path(guid, Path)),
         assert(path(guid, [Move|Path])),
         %% Move to next node
-        agent_move(guid, Next)
+        agent_move(guid, Next), !.
 
 
-    ;
+
     %% If reached home
         %% Print path
+pta_handler(guid, (_IP, _Port), main) :- not(current_predicate(came_from/1)),   
         path(guid, Path),
         writeln('Shortest path to goal: '),
-        writeln(Path)
-    ).
+        writeln(Path).
 
 %% Payload predicate to reverse direction
 reverse_dir(guid, north, south).

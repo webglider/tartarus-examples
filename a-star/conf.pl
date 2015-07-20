@@ -10,7 +10,7 @@ swipl_command('gnome-terminal --command "swipl -s init.pl -g <command>"').
 
 %% Base port (base portno to start from)
 %% Base port = 7000 => platforms will be 7001, 7002, ... so on
-base_port(9000).
+base_port(10000).
 
 %% Size of grid (rowsxcolumns)
 grid_size(5,5).
