@@ -28,7 +28,7 @@ Since the number of platforms could get large, we have included a setup script `
 
 1. Open `conf.pl` file and edit the `swipl_command` predicate, replacing the string in quotes with the format of the command to be used to open a new instance of swi prolog. The usual format for both linux and windows systems is mentioned in the comments of the file. The `<command>` part of the string will be replaced with the appropriate command by the setup script, during the setup process. (no need to worry about this)
 
-2. In the same file you can also edit the `base_port` predicate. If base_port is 7000 then platforms will be created from 7001, 7002 and so on... 
+2. In the same file you can also edit the `base_port` predicate. If base_port is 7000 then platforms will be created from 7000, 7001 and so on... 
 
 3. Open an instance of swi prolog and consult `setup.pl`.
 
