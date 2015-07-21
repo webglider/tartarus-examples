@@ -36,6 +36,9 @@ refree_handler(guid, _, symbols(o,x)) :- not(current_predicate(home/0)).
 %% Main Handler
 %% This is executed as soon as the agent reaches a platform
 refree_handler(guid, (IP, Port), main) :- 
+    attach_console, 
+    %% (this ensures that nothing input and output from user are
+    %% taken cleanly from a separate console)
     %% Print present board state
     refree_handler(guid, (IP, Port), print_board),
     refree_handler(guid, nothing, symbols(Sym, Osym)),
@@ -43,10 +46,10 @@ refree_handler(guid, (IP, Port), main) :-
     %% Has somebody won?
     %% fail ensures that execution does not continue if the game has terminated
     (refree_handler(guid, (IP, Port), has_won(Sym)) ->
-        writeln('YOU HAVE WON THE GAME'),!,fail   
+        writeln('YOU HAVE WON THE GAME'),read(_),!,fail   
     ;true),
     (refree_handler(guid, (IP, Port), has_won(Osym)) ->
-        writeln('YOU HAVE LOST THE GAME'),!,fail   
+        writeln('YOU HAVE LOST THE GAME'),read(_),!,fail   
     ;true),
 
     %% Take input from player
@@ -56,8 +59,9 @@ refree_handler(guid, (IP, Port), main) :-
 %% This predicate takes input of the move the player wants to make
 refree_handler(guid, (IP,Port), take_input) :- 
     writeln('Its your turn now!'),
-    writeln('Enter row [a or b or c]: '), read(Row),
-    writeln('Enter column [1 or 2 or 3]: '), read(Col),
+    writeln('Please put a fullstop after your input'),
+    write('Enter row [a or b or c]: '), read(Row),
+    write('Enter column [1 or 2 or 3]: '), read(Col),
     %% try to make move
     refree_handler(guid, (IP, Port), make_move(Row,Col)).
 
@@ -85,6 +89,7 @@ refree_handler(guid, (IP, Port), make_move(X,Y)) :- board(guid, X, Y, '_'),
     ;true),
 
     %% Move the agent.
+    sleep(3),
     play_with(Destination_IP, Destination_Port),
     agent_move(guid, (Destination_IP, Destination_Port)).
 
