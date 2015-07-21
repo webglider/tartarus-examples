@@ -4,8 +4,8 @@ A salesman want to popularize his products all over France. To do so he decides 
 ### Log Server
 This example intorduces the log server feature. A log server is an independantly running Tartarus platform which can be used to log various agent actions on different platforms.
 
-Creating a Log server is a simple as creating a normal Tratarus platform `platform_start(host, port)`.
-To send log messages to this platform from a different platform, the `set_log_server(host, port).` predicate must be used, where host and port correspong to that of the log server's platform. 
+Creating a Log server is as simple as creating a normal Tratarus platform `platform_start(host, port)`.
+To send log messages to this platform from a different platform, the `set_log_server(host, port).` predicate must be used, where host and port correspond to that of the log server's platform. 
 Once the log server is set, messages can be simply sent using `send_log(agent_name, message)`. The messages are neatly logged with timestamps and source information.
 
 ### Usage
