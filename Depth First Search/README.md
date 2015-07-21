@@ -1,7 +1,7 @@
 ## Depth First Search (single mobile agent)
 This example demonstrates the implementation of a depth first search (DFS) algorithm in which a mobile agent explores a network graph in a dfs manner. The nodes of the graph correspond to different platforms in the network. Each platform conatins information about it's connectivity with other nodes in the form of predicates. The mobile agent moves from platform to platform and prints a message on every one of them while dropping any necessary information on the paltforms for later use (for example wether or not it has already visited the node and previous location). Each platform also has a stationary agent, which responds to queries made by the mobile agent (This is used by the mobile agent to test the status of nodes i.e visited or not visited). The process can be controlled interactively by the user.
 
-![example graph](https://github.com/webglider/tartarus-examples/blob/master/dfs/graph.png?raw=true "Example graph used in graph.pl")
+![example graph](https://raw.githubusercontent.com/webglider/tartarus-examples/master/Depth%20First%20Search/graph.png "Example graph used in graph.pl")
 
 | Filename      | Purpose                     |
 | --------      | --------------------------- |
@@ -49,4 +49,4 @@ When on a particular node the mobile agent works as follows:
 The graph is contructed using predicates in the `graph.pl` file. To build a custom graph, this file can be modified. Details can be found in the inline comments of this file.
 
 A picture of the example graph described in `graph.pl` :
-![example graph](https://github.com/webglider/tartarus-examples/blob/master/dfs/graph.png?raw=true "Example graph used in graph.pl")
+![example graph](https://raw.githubusercontent.com/webglider/tartarus-examples/master/Depth%20First%20Search/graph.png "Example graph used in graph.pl")
