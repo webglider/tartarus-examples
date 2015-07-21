@@ -33,7 +33,7 @@ _______________________
 
 * The game can be started by player 1 using `start.`
 
-* To make a move at a particular location the `mark` predicate should be used by players. Example: to mark your symbol at location a,3 execute `mark(a,3).`
+* To make a move at a particular location you must enter input of row and column as asked by the newly created console. REMEMBER to add a full-stop i.e . after immediately after your input
 
 * The agent will move from player to player alternatively until somebody wins or there are no leftover valid moves
 
