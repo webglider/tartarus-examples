@@ -23,6 +23,7 @@ init :-
     location(IP, Port), platform_start(IP, Port),
     set_token(9595),
 
+
     %% Create agent on this platform
     consult('agent.pl'),
     agent_create(Name, (IP, Port), sort_handler),
@@ -34,7 +35,8 @@ init :-
     assert(state(guid, nothing)),
     add_payload(Name, [(value, 2), (state, 2)]),
 
-    writeln('------------------- PLATFORM 3 -----------------------').
+    writeln('------------------- PLATFORM 3 -----------------------'),
+    writeln('***---Value':Val).
 
 %% Use this predicate to insert agent on this platform at correct location
 insert :- 

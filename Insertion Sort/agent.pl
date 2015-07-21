@@ -18,7 +18,10 @@ sort_handler(guid, (IP, Port), main) :- state(guid, done),
     sort_handler(guid, (IP, Port), finish).
 
 %% If in state nothing
+%% Just print the present value
 sort_handler(guid, (_IP, _Port), main) :- state(guid, nothing),
+    value(guid, Val),
+    writeln('***---Value':Val),
     %% Do nothing
     true.
 %% ------------------------------------------------------------------
@@ -70,12 +73,12 @@ sort_handler(guid, (IP, Port), send_others_right) :-
 
 %% Move right handler
 sort_handler(guid, (_IP, _Port), move_right) :- 
-    writeln('Moving right'),
+    %% writeln('Moving right'),
     right(Destination),
     agent_move(guid, Destination).
 
 %% Finish handler
 sort_handler(guid, (_IP, _Port), finish) :- 
     value(guid, Val),
-    writeln('***-----Value inserted here':Val),
+    writeln('***---Value':Val),
     retract(state(guid, _)), assert(state(guid, nothing)).
