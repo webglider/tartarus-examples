@@ -33,7 +33,7 @@ pea_handler(guid, (_IP,_Port), handle_neighbours([])).
 %% Recursively handle neighbours if non empty list
 
 % If top of list is already in closed then continue to next
-pea_handler(guid, (IP, Port), handle_neighbours([(N,Dir)|T])) :- closed(guid, N),
+pea_handler(guid, (IP, Port), handle_neighbours([(N,_)|T])) :- closed(guid, N),
     pea_handler(guid, (IP, Port), handle_neighbours(T)).
     
 % If top of list is not in closed set, then process it
