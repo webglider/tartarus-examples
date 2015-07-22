@@ -4,7 +4,15 @@
 :-dynamic dfs_handler/3.
 
 dfs_handler(guid, (IP, Port), main) :- 
-    writeln('explorer has arrived!').
+    writeln('explorer has arrived!'),
+    sleep(1),
+    attach_console,
+    (visited(guid) -> writeln('BACKTRACKING') ; writeln('FOUND A NEW NODE')),
+    writeln('This is ':IP:Port),
+    label(Label), writeln('Presently on node':Label),
+    writeln('Press ENTER to continue'),
+    get_char(_),
+    dfs_handler(guid, (IP, Port), execute).
 
 %% Actual execution of agent on a given node
 %% This will be called when `move` is executed by the user.

@@ -15,6 +15,7 @@ create_stationary(Location) :-
     agent_create(stationary, Location, node_handler).
 
 init(1) :-
+assert(label('Number 1')),
 consult('platform.pl'),
 consult('stationary.pl'),
     %% Start the platform
@@ -32,6 +33,7 @@ consult('stationary.pl'),
 
 %% Remaining nodes are initilized similarly
 init(2) :-
+assert(label('Number 2')),
 consult('platform.pl'),
 consult('stationary.pl'),
     platform_start(localhost, 7002), %% Note: modify IP and port here if required
@@ -44,6 +46,7 @@ consult('stationary.pl'),
     create_stationary((X,Y)).
 
 init(3) :-
+assert(label('Number 3')),
 consult('platform.pl'),
 consult('stationary.pl'),
     platform_start(localhost, 7003), %% Note: modify IP and port here if required
@@ -57,6 +60,7 @@ consult('stationary.pl'),
     create_stationary((X,Y)).
 
 init(4) :-
+assert(label('Number 4')),
 consult('platform.pl'),
 consult('stationary.pl'),
     platform_start(localhost, 7004), %% Note: modify IP and port here if required
@@ -69,6 +73,7 @@ consult('stationary.pl'),
     create_stationary((X,Y)).
 
 init(5) :-
+assert(label('Number 5')),
 consult('platform.pl'),
 consult('stationary.pl'),
     platform_start(localhost, 7005), %% Note: modify IP and port here if required
