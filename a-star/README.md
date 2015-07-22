@@ -10,7 +10,7 @@ Three types of mobile agents are used in this example.
 
 * Tracer Agent (tracer.pl)
 
-The most complex of all is the PEA, which essentially traverses the network graph using the A* algorithm. When at a particular node, if the status or information at a neighbouring node needs to be updated, it spawns lightweight UAs to achieve the task. UAs kill themselves immediately after the data has been added to the target node. Once the PEA reaches the goal, it spawns executes a PTA, which simply re-traces the path back to the source, and reports the result at the source
+The most complex of all is the Explorer, which essentially traverses the network graph using the A* algorithm. When at a particular node, if the status or information at a neighbouring node needs to be updated, it spawns lightweight Updater Agentss to achieve the task. Updaters kill themselves immediately after the data has been added to the target node. Once the Explorer reaches the goal, it spawns executes a Tracer, which simply re-traces the path back to the source, and reports the result at the source
 
 
 ### Usage
@@ -41,7 +41,11 @@ _____________________
 1. Open the source platform (7001 if 7000 was base port) and run `start.` The entire process will execute and the shortest path will be printed as a list of directions to follow (north, south, east, west)
 
 
-***Note:*** In the example grid base port platform is at north-west top and last platform is at south-east bottom
+**Note:** In the example grid start platform is at north-west top and target platform is at south-east bottom
+
+One can move in only the directions North, South ,East, West
+
+![example grid](https://raw.githubusercontent.com/webglider/tartarus-examples/master/a-star/grid.png "Grid in Example")
 
 
 ### Additonal Notes
