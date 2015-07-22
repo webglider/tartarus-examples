@@ -1,6 +1,16 @@
 ## A* search
 Imagine a network of roads in a busy city arranged in a square grid-like fashion. Each junction acts as a node and has infrastructure which connects to a digital network spread over the entire area. A vehicle would like to travel from a particular source node to a destination node. Since the city is usually very busy, there is a lot of traffic congestion and certain junctions end up having huge traffic jams. The vehicle driver would like to avoid traversing such jammed nodes during his journey. To find the shortest path from source to destination avoiding jammed nodes, a mobile-agent is spawned at the source. The agent looks for the destination using the well known A* graph search algorithm. Once it reaches the goal it spawns another mobile agent which retraces the shortest path from source to destination.
 
+| Filename      | Purpose                                                           |
+| --------      | ----------------------------------------------------------------- |
+| conf.pl       | Configuration Information                                         |
+| explorer.pl   | Agent performing A*                                               |
+| updater.pl    | Agent for performing updates on other platforms                   |
+| tracer.pl     | Agent which traces back the shortest path                         |
+| init.pl       | To initialize platforms and other information on all nodes        |
+| setup.pl      | Setup script which creates instances and runs init on all of them |
+
+
 ### Algorithm
 Three types of mobile agents are used in this example.
 
