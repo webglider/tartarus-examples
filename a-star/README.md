@@ -20,7 +20,7 @@ Three types of mobile agents are used in this example.
 
 * Tracer Agent (tracer.pl)
 
-The most complex of all is the Explorer, which essentially traverses the network graph using the A* algorithm. When at a particular node, if the status or information at a neighbouring node needs to be updated, it spawns lightweight Updater Agentss to achieve the task. Updaters kill themselves immediately after the data has been added to the target node. Once the Explorer reaches the goal, it spawns executes a Tracer, which simply re-traces the path back to the source, and reports the result at the source
+The most complex of all is the Explorer, which essentially traverses the network graph using the A* algorithm. When at a particular node, if the status or information at a neighbouring node needs to be updated, it spawns lightweight Updater Agent to achieve the task. Updaters kill themselves immediately after the data has been added to the target node. Once the Explorer reaches the goal, it spawns executes a Tracer, which simply re-traces the path back to the source, and reports the result at the source
 
 
 ### Usage
@@ -58,7 +58,7 @@ One can move in only the directions North, South ,East, West
 ![example grid](https://raw.githubusercontent.com/webglider/tartarus-examples/master/a-star/grid.png "Grid in Example")
 
 
-### Additonal Notes
+### Additional Notes
 
 * You can modify the grid size using the `grid_size` predicate in `conf.pl`
 
