@@ -1,5 +1,5 @@
 ## Dictionary Search
-This is a simple example demonstrating dictionary search. Dictionaries of english words along with their meaning are stored on several dictionaries each on a separate platfrom on the network. A user who would like to search for a word, does so by creating a mobile agent which moves through each of the dictionaries one after another until it finds the word and returns to the home platform with the meaning, printing it to the user. The agent kills itself after the process is completed.
+This is a simple example demonstrating dictionary search. Dictionaries of english words along with their meaning are stored on several dictionaries each on a separate platform on the network. A user who would like to search for a word, does so by creating a mobile agent which moves through each of the dictionaries one after another until it finds the word and returns to the home platform with the meaning, printing it to the user. The agent kills itself after the process is completed.
 
 
 ### Usage
@@ -10,9 +10,9 @@ This is a simple example demonstrating dictionary search. Dictionaries of englis
 
 3. Run `init.` to initialize the home platform.
 
-4. Open another instance of SWI-Prolog (swipl) and consult `dict1.pl`.
+4. Open 5 other instances of SWI-Prolog (swipl) and consult `dict1.pl`, `dict2.pl` ....... `dict5.pl`.
 
-5. Run `init.` to initialize the dictionary platform.
+5. Run `init.` to initialize the dictionary platform on each of the instances.
 
 6. On the home platform run `search.`, to search a word.
 
@@ -23,7 +23,7 @@ This is a simple example demonstrating dictionary search. Dictionaries of englis
 9. You can repeat the process by running `search.` again.
 
 
-### Additonal Notes
+### Additional Notes
 
 * The words in each dictionary are stored in the corresponding `dict*.pl` file with the `word(word,meaning)` predicates.
 

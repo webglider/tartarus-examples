@@ -15,11 +15,7 @@ word(oblivion,'A state of bieng unaware of what is happening around you').
 word(limerence,'State of being infatuated with another person').
 word(nefarious,'Wicked and dispecable').
 word(ethereal,'Extremely light and delicate').
-word(sonorous,'Melodious and pleasant to hear').
-word(hypothetical, 'based on or serving as a hypothesis').
-word(gigantic, 'of very great size or extent; huge or enormous').
-word(superfluous, 'unnecessary, especially through being more than enough').
-word(retarded, 'less advanced in mental, physical, or social development than is usual for ones age').
+
 
 
 %% Use this predicate to initilize the platform.
