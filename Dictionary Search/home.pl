@@ -6,6 +6,10 @@ location(localhost, 3434).
 
 %% List of dictionaries to search through
 list(guid, (localhost, 7001)).
+list(guid, (localhost, 7002)).
+list(guid, (localhost, 7003)).
+list(guid, (localhost, 7004)).
+list(guid, (localhost, 7005)).
 
 %% Use this predicate to initialize the home platform
 init :- 
