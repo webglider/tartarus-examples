@@ -9,13 +9,14 @@ You can download a packaged version of these examples in zip format by clicking 
 
 Follow the below order for maximum ease and benifit.
 
-1. Basics
-2. Sum
-3. Dictionary search
-4. Tic-tac-toe
-5. TSP
-6. Binary Search Tree
-7. Insertion Sort
-8. Breadth First Search
-9. Depth First Search
-10. A-star
+1. [Basics](https://github.com/webglider/tartarus-examples/tree/master/Basics)
+2. [Sum](https://github.com/webglider/tartarus-examples/tree/master/sum)
+3. [Dictionary search](https://github.com/webglider/tartarus-examples/tree/master/Dictionary%20Search)
+4. [Tic-tac-toe](https://github.com/webglider/tartarus-examples/tree/master/tic-tac-toe)
+5. [TSP](https://github.com/webglider/tartarus-examples/tree/master/Travelling%20Salesman%20Problem)
+6. [Flooding](https://github.com/webglider/tartarus-examples/tree/master/Flooding)
+7. [Binary Search Tree](https://github.com/webglider/tartarus-examples/tree/master/Breadth%20First%20Search)
+8. [Insertion Sort](https://github.com/webglider/tartarus-examples/tree/master/Insertion%20Sort)
+9. [Breadth First Search](https://github.com/webglider/tartarus-examples/tree/master/Breadth%20First%20Search)
+10. [Depth First Search](https://github.com/webglider/tartarus-examples/tree/master/Depth%20First%20Search)
+11. [A-star](https://github.com/webglider/tartarus-examples/tree/master/a-star)
