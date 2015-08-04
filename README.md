@@ -17,6 +17,5 @@ Follow the below order for maximum ease and benifit.
 6. [Flooding](https://github.com/webglider/tartarus-examples/tree/master/Flooding)
 7. [Binary Search Tree](https://github.com/webglider/tartarus-examples/tree/master/Breadth%20First%20Search)
 8. [Insertion Sort](https://github.com/webglider/tartarus-examples/tree/master/Insertion%20Sort)
-9. [Breadth First Search](https://github.com/webglider/tartarus-examples/tree/master/Breadth%20First%20Search)
 10. [Depth First Search](https://github.com/webglider/tartarus-examples/tree/master/Depth%20First%20Search)
 11. [A-star](https://github.com/webglider/tartarus-examples/tree/master/a-star)
