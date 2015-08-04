@@ -20,9 +20,9 @@ ___________________
 Insertion
 _______________
 
-1. Start from PLATFROM-1 and run `insert.` on each of the platfroms in numerical order (1-5). The `insert.` predicate makes the agent on the present platfrom insert itself into the correct location in sorted order. (other agents may also shift during the process)
+1. Start from PLATFORM-1 and run `insert.` on each of the platforms in numerical order (1-5). The `insert.` predicate makes the agent on the present platform insert itself into the correct location in sorted order. (other agents may also shift during the process)
 
-2. To view the integer on any particular platfrom at a given point of time, simply run `final_value(X).` X will be unified to the integer which the agent presently on the platform holds. This way you can check the values after every step of insertion.
+2. To view the integer on any particular platform at a given point of time, simply run `final_value(X).` X will be unified to the integer which the agent presently on the platform holds. This way you can check the values after every step of insertion.
 
 3. After you have run `insert.` on all platforms in order, the integers and their agents will be in sorted order (increasing left to right).
 
@@ -30,9 +30,9 @@ _______________
 
 
 
-### Additonal Notes
+### Additional Notes
 
-* The example can easily be extended to more platforms and agents. All you have to do is copy the `platform-1.pl` file and change the required values. Inline comments in the file will help you with this. After this you can simply consult this on a new platfrom and run `init.` and  `insert.` just as usual.
+* The example can easily be extended to more platforms and agents. All you have to do is copy the `platform-1.pl` file and change the required values. Inline comments in the file will help you with this. After this you can simply consult this on a new platform and run `init.` and  `insert.` just as usual.
 
 * Insertion must be done in sequential order (the order in which the linked list is arranged left to right).
 

@@ -7,7 +7,7 @@ You can download a packaged version of these examples in zip format by clicking 
 
 #Tutorial
 
-Follow the below order for maximum ease and benifit.
+Follow the below order for maximum ease and benefit.
 
 1. [Basics](https://github.com/webglider/tartarus-examples/tree/master/Basics)
 2. [Sum](https://github.com/webglider/tartarus-examples/tree/master/sum)

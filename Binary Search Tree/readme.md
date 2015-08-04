@@ -32,7 +32,7 @@ Every platform has information belonging ONLY to itself ie. `children(P,L,R)` an
          (i) The children of the current platform only.
         (ii) The value on the platform.
 2. `spawn_agent(X)` creates an agent with the name `scout` and adds as payload the value it is searching for `X`
-3. If the `search_value` and `value_at` the platform are equal the program terminates with a note on the sceen saying it has found the value its searching for.
+3. If the `search_value` and `value_at` the platform are equal the program terminates with a note on the screen saying it has found the value its searching for.
 4. If the `search_value` is greater agent moves to the left child platform.
 5. If the `search_value` is lesser agent moves to the right child platform.
 6. For moving `bst_handler(_ , _ , move_to(P))` is used which prints `Value NOT FOUND` message if there is no child  platform is present in the direction (left or right) specified thus guaranteeing the termination in case agent doesn't find the required value.

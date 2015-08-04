@@ -2,7 +2,7 @@
 A salesman want to popularize his products all over France. To do so he decides to tour 5 major cities in France one after another. He would like to take the tour of least total distance passing through each of the cities exactly once. This is an instance of the classic Travelling Salesman Problem (TSP). In this example we emulate this scenario with the salesman as an intelligent mobile agent and each of the cities as a tartarus platform in the network. The salesman can move from city to city, and can obtain information of which city is at what distance while at a particular city. This distance information is stored locally on the platforms of the cities. Further the salesman carries a checklist along with him as payload, which he uses to make sure he does not visit a city twice. The TSP problem being NP Hard cannot be solved efficiently and hence we use a simple heuristic, the Nearest Neighbour (NN) heuristic. At any given city the salesman moves on to an unvisited city which is at least distance from his present location.
 
 ### Log Server
-This example intorduces the log server feature. A log server is an independantly running Tartarus platform which can be used to log various agent actions on different platforms.
+This example introduces the log server feature. A log server is an independently running Tartarus platform which can be used to log various agent actions on different platforms.
 
 Creating a Log server is as simple as creating a normal Tratarus platform `platform_start(host, port)`.
 To send log messages to this platform from a different platform, the `set_log_server(host, port).` predicate must be used, where host and port correspond to that of the log server's platform. 
@@ -57,7 +57,7 @@ _______________________
 | Grenoble  |   566   |  334   |  105   |  0       |  273      |  
 | Marseille |   769   |  185   |  314   |  273     |  0        |
 
-### Additonal Notes
+### Additional Notes
 * The distance information can be found in the `city*.pl` files in the `price` predicates. Real-life values have been used for this example.
 
 * To add a new city and extend this example you can do the following :

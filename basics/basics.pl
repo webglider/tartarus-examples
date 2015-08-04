@@ -159,7 +159,7 @@ agent_create(bar, (localhost, 50001), foo_handler).
 listing(foo_handler/3).
 %% This command shows all the definitions of the predicate foo_handler.
 %% You will see that there are 2 definitions, one the initial generic template
-%% definition and the other the same definiton with `guid` replaced by `bar`.
+%% definition and the other the same definition with `guid` replaced by `bar`.
 %% This later definition is specific to the agent `bar`. If you create another
 %% agent with a different name but same handler you will see another definition
 %% in the listing.
