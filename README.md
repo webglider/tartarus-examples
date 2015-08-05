@@ -9,7 +9,7 @@ You can download a packaged version of these examples in zip format by clicking 
 
 Follow the below order for maximum ease and benefit.
 
-1. [Basics](https://github.com/webglider/tartarus-examples/tree/master/Basics)
+1. [Basics](https://github.com/webglider/tartarus-examples/tree/master/basics/basics.pl)
 2. [Sum](https://github.com/webglider/tartarus-examples/tree/master/sum)
 3. [Dictionary search](https://github.com/webglider/tartarus-examples/tree/master/Dictionary%20Search)
 4. [Tic-tac-toe](https://github.com/webglider/tartarus-examples/tree/master/tic-tac-toe)
