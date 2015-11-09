@@ -56,7 +56,7 @@
 %% On Unix/Linux systems, this can be done by opening the terminal entering the
 %% `swipl` command. This will open the SWI-Prolog interpreter. Then you can 
 %% enter the `consult('[path to platform.pl]').` for example if it is located in
-%% /home/robotics/tartarus/ then use `consult('/home/tartarus/platform.pl').`
+%% /home/robotics/tartarus/ then use `consult('/home/robotics/tartarus/platform.pl').`
 
 %% Once the file has been consulted on a new instance, you can enter various
 %% prolog predicates in the interpreter to execute various platform functions.
