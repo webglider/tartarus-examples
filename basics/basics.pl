@@ -37,7 +37,7 @@
 %% they must have different ports. This is very helpful while building and 
 %% testing mobile agent applications, as we can emulate the entire network on a
 %% single computer.
-%% Hence whenever we refer to a network, we mean a collection of platforms each
+%% Hence wheconever we refer to a network, we mean a collection of platforms each
 %% uniquely identified by a <host, port> pair. The `host` is generally the 
 %% IP address of the machine on which the platform is running. If all your
 %% platforms are running on a single machine it is sufficient to use the term
@@ -57,6 +57,7 @@
 %% `swipl` command. This will open the SWI-Prolog interpreter. Then you can 
 %% enter the `consult('[path to platform.pl]').` for example if it is located in
 %% /home/robotics/tartarus/ then use `consult('/home/robotics/tartarus/platform.pl').`
+consult('[path to platform.pl]').
 
 %% Once the file has been consulted on a new instance, you can enter various
 %% prolog predicates in the interpreter to execute various platform functions.
@@ -80,9 +81,8 @@ set_token(9595).
 
 %% If you forget the details of this platform, you can easily get them using the
 %% `get_platform_details` predicate. Simply, Enter the following:
-get_platform_details(IP,Port), writeln(IP), writeln(Port).
-%% The first predicate unifies the two variables to the actual IP and Port and
-%% the next two predicates print these values on two lines.
+get_platform_details(IP,Port).
+%% The predicate unifies the two variables to the actual IP and Port.
 
 %% -- How to close a platform?
 %% To safely close or stop a platform, simply use:
@@ -169,7 +169,7 @@ listing(foo_handler/3).
 %% the tasks specified in the `main` handler which we had written before. 
 %% To execute the agent on this platform run:
 agent_execute(bar, (localhost ,50001), foo_handler).
-%% You should see "Hello World" followed by the host an port of the present 
+%% You should see "Hello World" followed by the host and port of the present 
 %% platform printed
 
 %% -- How to add token to agent?
